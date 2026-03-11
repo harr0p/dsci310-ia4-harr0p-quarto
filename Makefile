@@ -14,16 +14,10 @@ results/horse_pop_plot_largest_sd.png results/horse_pops_plot.png results/horses
 		--out_dir="results"
 
 
-# render quarto report in HTML
-docs/qmd_example.html: results reports/qmd_example.qmd
+# render quarto report in HTML and pdf
+docs/qmd_example.html docs/qmd_example.pdf: results reports/qmd_example.qmd
 	mkdir -p docs
-	quarto render reports/qmd_example.qmd --to html --output-dir docs
-
-
-# render quarto report in PDF
-docs/qmd_example.pdf: results reports/qmd_example.qmd
-	mkdir -p docs
-	quarto render reports/qmd_example.qmd --to pdf --output-dir docs
+	quarto render reports/qmd_example.qmd --output-dir docs
 
 
 # clean
